@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 
 import { api } from '../services/api';
+import { GenreResponseProps } from '../interfaces/GenreResponseProps';
 
 import { Button } from "./Button";
-interface GenreResponseProps {
-  id: number;
-  name: 'action' | 'comedy' | 'documentary' | 'drama' | 'horror' | 'family';
-  title: string;
-}
+
 
 interface SideBarProps {
   id: number;
@@ -16,7 +13,6 @@ interface SideBarProps {
 
 export function SideBar(props: SideBarProps) {
   // Complete aqui
-  const [selectedGenreId, setSelectedGenreId] = useState(1);
   const [genres, setGenres] = useState<GenreResponseProps[]>([]);
 
   useEffect(() => {
